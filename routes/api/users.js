@@ -11,11 +11,11 @@ const User = require('../../models/User');
 
 
 
-// @route Post api/user
+// @route Post api/users
 // @desc Post user
 // @access Public
 router.post('/', (req, res) => {
-  const { name , email , password} = req.body;
+    const { name , email , password} = req.body;
 
 //   simple validation
 if(!name || !email || !password){

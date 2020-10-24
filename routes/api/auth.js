@@ -17,7 +17,7 @@ const User = require('../../models/User');
 // @desc auth user
 // @access Public
 router.post('/', (req, res) => {
-  const {email , password} = req.body;
+    const {email , password} = req.body;
 
 //   simple validation
 if(!email || !password){
@@ -35,7 +35,7 @@ User.findOne({email})
 
     bcrypt.compare(password, user.password)
     .then(isMatch => {
-        if(!isMatch) return res.status(400).json({msg :'Incalid credentials'});
+        if(!isMatch) return res.status(400).json({msg :'Invalid credentials'});
 
         jwt.sign(
             {id: user.id},
